@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class PotPiece : MonoBehaviour
+public class Plant : MonoBehaviour
 {
     [SerializeField]
     private GameObject placeSpot;
@@ -13,25 +12,25 @@ public class PotPiece : MonoBehaviour
     private void OnMouseDown()
     {
         if (locked) return;
-        PieceMovementController.instance.SetHoldingPiece(this.gameObject);
+        PieceMovementController.instance.SetHoldingPlant(true);
     }
 
     private void OnMouseUp()
     {
         if (locked) return;
-        PieceMovementController.instance.SetHoldingPiece(null);
+        PieceMovementController.instance.SetHoldingPlant(false);
     }
 
     private void Update()
     {
         if (locked) return;
-        if(PieceMovementController.instance.GetHoldingPiece() != this.gameObject)
+        if (PieceMovementController.instance.GetHoldPlant() != this.gameObject)
         {
             if (Vector3.Distance(placeSpot.transform.position, this.gameObject.transform.position) < 0.5f)
             {
                 locked = true;
                 transform.position = placeSpot.transform.position;
-                WinManager.instance.AddPiecePlaced();
+                WinManager.instance.AddPlantPlaced();
             }
         }
     }

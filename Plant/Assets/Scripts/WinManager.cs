@@ -12,7 +12,10 @@ public class WinManager : MonoBehaviour
     [SerializeField]
     private GameObject winScreen;
 
-    private int piecesPlaced;
+    [SerializeField]
+    private GameObject plant;
+
+    private int piecesPlaced =0;
 
     private void Awake()
     {
@@ -26,8 +29,18 @@ public class WinManager : MonoBehaviour
 
         if(piecesPlaced == numberOfPieces )
         {
-            Win();
+            SpawnPlant();
         }
+    }
+
+    public void AddPlantPlaced()
+    {
+        Win();
+    }
+
+    private void SpawnPlant()
+    {
+        plant.SetActive(true);
     }
 
 
