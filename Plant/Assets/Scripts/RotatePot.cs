@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class RotatePot : MonoBehaviour
 {
@@ -13,7 +9,7 @@ public class RotatePot : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
 
-        moveValue = new Vector2(context.ReadValue<Vector2>().y, -context.ReadValue<Vector2>().x);
+        moveValue = new Vector2(0, -context.ReadValue<Vector2>().x);
     }
     private void Update()
     {
