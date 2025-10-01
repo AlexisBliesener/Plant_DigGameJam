@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class RotatePot : MonoBehaviour
 {
     [SerializeField]
-    private float rotateSpeed = 2; 
+    private float rotateSpeed =0.5f; 
     private Vector2 moveValue = Vector2.zero;
     public void Move(InputAction.CallbackContext context)
     {

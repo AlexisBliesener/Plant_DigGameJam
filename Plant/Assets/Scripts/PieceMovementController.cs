@@ -45,17 +45,17 @@ public class PieceMovementController : MonoBehaviour
     {
         if (holdingPiece != null)
         {
-            holdingPiece.transform.position += new Vector3(context.ReadValue<Vector2>().x / 100, context.ReadValue<Vector2>().y / 100, 0);
+            holdingPiece.transform.position += new Vector3(context.ReadValue<Vector2>().x / 90, context.ReadValue<Vector2>().y / 90, 0);
         }
         else if(holdingPlant)
         {
-            plant.transform.position += new Vector3(0, context.ReadValue<Vector2>().y / 100, 0);
+            plant.transform.position += new Vector3(0, context.ReadValue<Vector2>().y / 90, 0);
         }
     }
 
     public  void DragZ(InputAction.CallbackContext context)
     {
         if (holdingPiece == null) return;
-        holdingPiece.transform.position += new Vector3(0, 0, context.ReadValue<Vector2>().y/400);
+        holdingPiece.transform.position += new Vector3(0, 0, context.ReadValue<Vector2>().y/800);
     }
 }
